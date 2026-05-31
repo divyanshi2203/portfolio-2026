@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', 'Poppins', system-ui, -apple-system, Segoe UI, Roboto,
+    sans-serif;
+  background-color: #fff7f8;
+  color: #1f2937;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* ---------- Reusable component classes ---------- */
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full
+           bg-btn-gradient px-6 py-3 text-sm font-semibold text-white shadow-soft
+           transition-all duration-300 hover:shadow-glow hover:-translate-y-0.5
+           focus:outline-none focus:ring-2 focus:ring-rose-primary/40;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full
+           border border-rose-soft bg-white px-6 py-3 text-sm font-semibold
+           text-rose-dark shadow-soft transition-all duration-300
+           hover:bg-rose-light hover:-translate-y-0.5
+           focus:outline-none focus:ring-2 focus:ring-rose-primary/30;
+  }
+
+  .card-base {
+    @apply rounded-2xl border border-rose-100 bg-white p-6 shadow-card
+           transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply hover:-translate-y-1 hover:shadow-glow hover:bg-card-hover;
+  }
+
+  .badge-rose {
+    @apply inline-flex items-center rounded-full border border-rose-100
+           bg-rose-light px-3 py-1 text-xs font-medium text-rose-dark;
+  }
+
+  .input-base {
+    @apply w-full rounded-xl border border-rose-100 bg-white px-4 py-3 text-sm
+           text-ink-main placeholder:text-ink-muted shadow-sm
+           focus:border-rose-primary focus:outline-none focus:ring-2
+           focus:ring-rose-primary/20 transition-all;
+  }
+
+  .section-padding {
+    @apply py-16 sm:py-24;
+  }
+}
+
+/* ---------- Floating decorative blobs ---------- */
+.blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(60px);
+  opacity: 0.55;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ---------- Scrollbar styling ---------- */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #fff1f2;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #e11d48, #be123c);
+  border-radius: 999px;
+}

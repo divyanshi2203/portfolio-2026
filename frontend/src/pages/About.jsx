@@ -26,7 +26,7 @@ export default function About({ profile }) {
         <SectionTitle
           eyebrow="About me"
           title="A backend-focused engineer who likes shipping."
-          subtitle="Final-year B.Tech (AI/ML) student, freelance backend developer, and someone happiest when an API runs fast and an inference pipeline returns the right answer."
+          subtitle="Computer Science (AI/ML) fresher, graduated in June 2026, interested in backend and full-stack development, and someone happiest when an API runs fast and an inference pipeline returns the right answer."
         />
 
         {/* Summary */}
@@ -39,7 +39,7 @@ export default function About({ profile }) {
         >
           <p className="text-base sm:text-lg text-ink-secondary leading-relaxed">
             {profile?.summary ||
-              'Backend-focused CS (AI/ML) student graduating June 2026 with hands-on experience building production-grade REST APIs using Python, Django, DRF, Flask, and FastAPI. Comfortable with JWT auth, PostgreSQL schema design with composite indexing, async task processing using Celery + Redis, and containerized deployment with Docker Compose.'}
+              'Backend-focused CS (AI/ML) fresher, graduated in June 2026, with hands-on experience building production-grade REST APIs and full-stack applications using Python, Django, DRF, Flask, FastAPI, and modern web technologies. Comfortable with JWT auth, PostgreSQL schema design with composite indexing, async task processing using Celery + Redis, and containerized deployment with Docker Compose.'}
           </p>
         </motion.div>
 
@@ -48,17 +48,17 @@ export default function About({ profile }) {
           <Card
             icon={User2}
             title="Who I Am"
-            text="A final-year B.Tech (AI/ML) student from Moradabad Institute of Technology with a backend developer's mindset — schemas first, indexes second, endpoints third."
+            text="A backend-focused B.Tech CS (AI/ML) fresher from Moradabad Institute of Technology with a backend and full-stack developer's mindset — schemas first, indexes second, endpoints third."
           />
           <Card
             icon={Code2}
             title="What I Build"
-            text="Production-grade REST APIs with Django, DRF, Flask, and FastAPI — JWT auth, Postgres indexing, Celery + Redis pipelines, Dockerized stacks, OpenAPI docs."
+            text="Production-grade REST APIs and full-stack applications with Django, DRF, Flask, and FastAPI — JWT auth, Postgres indexing, Celery + Redis pipelines, Dockerized stacks, OpenAPI docs."
           />
           <Card
             icon={Compass}
             title="What I'm Looking For"
-            text="Backend, API, and full-stack roles where I can ship clean code, take ownership of schemas and pipelines, and grow into scalable backend architecture."
+            text="Backend, full-stack development, and API-focused fresher roles where I can ship clean code, take ownership of schemas and pipelines, and grow into scalable software architecture."
           />
         </div>
 
@@ -66,7 +66,7 @@ export default function About({ profile }) {
         <div className="mt-20">
           <SectionTitle
             eyebrow="Education"
-            title="Currently pursuing B.Tech in CS (AI/ML)"
+            title="Currently looking for fresher roles in CS (AI/ML), backend, and full-stack development"
           />
           <div className="max-w-3xl mx-auto space-y-4">
             {education.map((e, i) => (

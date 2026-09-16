@@ -6,19 +6,17 @@ to keep the portfolio in sync with future resume changes.
 
 PROFILE = {
     "name": "Divyanshi Saini",
-    "title": "Backend / Full-Stack Developer (Python • FastAPI • Django)",
+    "title": "Full-Stack Software Developer | Python, JavaScript, APIs",
     "summary": (
-        "Backend-focused Computer Science (AI/ML) student graduating June 2026 "
-        "with hands-on experience building production-grade REST APIs using "
-        "Python, Django, Django REST Framework, Flask, and FastAPI. Comfortable "
-        "with JWT-based authentication, PostgreSQL schema design with composite "
-        "indexing, asynchronous task processing using Celery + Redis, and "
-        "containerized deployment with Docker Compose. Strong interest in "
-        "scalable backend architecture and clean API design."
+        "Computer Science (AI/ML) graduate with experience building and supporting "
+        "reliable web applications from interface to API. I work primarily with "
+        "Python and JavaScript, using Django, FastAPI, Flask, PostgreSQL, and Docker. "
+        "My recent work includes API testing and design support, containerized Python "
+        "task workflows, and complete client projects delivered from idea to deployment."
     ),
     "email": "divyanshisaini22@gmail.com",
     "phone": None,
-    "location": "Moradabad, Uttar Pradesh, India",
+    "location": "Delhi NCR, India",
     "github": "https://github.com/divyanshi2203",
     "linkedin": "https://www.linkedin.com/in/divyanshi-saini-577108259/",
     "resume_url": "/resume.pdf",
@@ -27,7 +25,15 @@ PROFILE = {
 SKILLS = {
     "programming": ["Python", "JavaScript", "SQL", "Java (basic)"],
     "backend": ["Django", "Django REST Framework", "Flask", "FastAPI"],
-    "frontend": ["React", "HTML", "CSS", "Tailwind CSS"],
+    "frontend": [
+        "JavaScript",
+        "React",
+        "HTML5",
+        "CSS3",
+        "Responsive UI",
+        "Tailwind CSS",
+        "Django Templating",
+    ],
     "databases": ["PostgreSQL", "MySQL", "SQLite", "SQLAlchemy", "Django ORM"],
     "apis_auth": [
         "REST APIs",
@@ -35,6 +41,7 @@ SKILLS = {
         "OpenAPI / Swagger",
         "Postman",
         "API Design",
+        "API Testing",
     ],
     "async_infra": ["Celery", "Redis", "Gunicorn", "Docker", "Docker Compose"],
     "devops": ["Git", "GitHub", "Railway", "Vercel", "Linux (basic)", "CI/CD basics"],
@@ -47,7 +54,8 @@ SKILLS = {
     ],
     "tools": [
         "VS Code",
-        "Pytest (basics)",
+        "Pytest",
+        "End-to-End Testing",
         "Virtual Environments",
         "Environment-based Configs",
     ],
@@ -78,7 +86,7 @@ PROJECTS = [
             "provides an API-first platform where uploads are predicted by a "
             "trained CNN with explainable confidence scores."
         ),
-        "role": "Backend & ML integration developer — designed the FastAPI service, inference pipeline, and deployment.",
+        "role": "Backend and ML integration developer responsible for the FastAPI service, inference pipeline, and deployment.",
     },
     {
         "id": 2,
@@ -102,7 +110,7 @@ PROJECTS = [
             "synthesize content. CuraLink provides API-backed search and "
             "generation in one workflow."
         ),
-        "role": "Freelance full-stack developer — built the backend services and integrated the deployed frontend.",
+        "role": "Freelance full-stack developer responsible for backend services and the deployed frontend integration.",
     },
     {
         "id": 3,
@@ -137,7 +145,7 @@ PROJECTS = [
             "if done at query time. This API tokenizes asynchronously and "
             "serves top-N word lookups from a composite-indexed table."
         ),
-        "role": "Sole backend developer — designed the schema, async pipeline, auth, and Docker Compose stack.",
+        "role": "Sole backend developer responsible for the schema, async pipeline, authentication, and Docker Compose stack.",
     },
     {
         "id": 4,
@@ -161,18 +169,60 @@ PROJECTS = [
             "This Django app covers menu management, order placement, and "
             "admin tracking out of the box."
         ),
-        "role": "Sole developer — modeled the domain, built views, templates, and admin flows.",
+        "role": "Sole developer responsible for domain modeling, views, templates, and admin workflows.",
     },
 ]
 
 EXPERIENCE = [
     {
         "id": 1,
+        "role": "Python Intern (API Testing & Design)",
+        "company": "SaaS Banana",
+        "duration": "August 2026 - Present | Remote",
+        "description": (
+            "Support the quality and design of internal APIs by checking how "
+            "endpoints behave across expected, invalid, and edge-case requests."
+        ),
+        "technologies": ["Python", "API Testing", "API Design", "Authentication"],
+        "responsibilities": [
+            "Test request and response behavior, authentication flows, and edge cases across internal APIs",
+            "Support API design reviews and keep endpoint documentation clear and consistent",
+            "Use Python scripts to automate repeatable endpoint validation",
+        ],
+    },
+    {
+        "id": 2,
+        "role": "Full-Stack / Freelance Developer",
+        "company": "Self-Employed",
+        "duration": "2025 - Present | Remote",
+        "description": (
+            "Deliver complete web applications and reliable Python workflows for "
+            "clients, from requirements and implementation through testing and deployment."
+        ),
+        "technologies": [
+            "Python",
+            "JavaScript",
+            "FastAPI",
+            "Flask",
+            "PostgreSQL",
+            "Docker",
+            "End-to-End Testing",
+        ],
+        "responsibilities": [
+            "Completed a July 2026 engagement sourced through Handshake AI, building and running containerized harbor tasks in Python",
+            "Wrote end-to-end tests to validate task execution inside Docker containers",
+            "Delivered CuraLink, an AI-powered research website with a JavaScript interface and API-driven workflows",
+            "Built and deployed full-stack applications using FastAPI or Flask, JavaScript, PostgreSQL or SQLite, Docker, Railway, and Vercel",
+            "Managed client communication, requirements, and delivery timelines independently",
+        ],
+    },
+    {
+        "id": 3,
         "role": "Backend Developer Intern",
         "company": "ANV Tech Solutions",
-        "duration": "July 2025 – August 2025 · Remote",
+        "duration": "July 2025 - August 2025 | Remote",
         "description": (
-            "Worked on internal application workflows — building and shipping "
+            "Worked on internal application workflows by building and shipping "
             "RESTful APIs with Django and FastAPI, and optimizing PostgreSQL "
             "queries to reduce response times on key endpoints."
         ),
@@ -184,48 +234,21 @@ EXPERIENCE = [
             "Reduced average response time on key endpoints through indexing and query refactoring",
         ],
     },
-    {
-        "id": 2,
-        "role": "Freelance Backend Developer",
-        "company": "Self-Employed",
-        "duration": "2025 – Present · Remote",
-        "description": (
-            "Delivered backend and full-stack projects sourced through LinkedIn, "
-            "including CuraLink, an AI-powered research website with API-driven "
-            "search and content generation workflows."
-        ),
-        "technologies": [
-            "FastAPI",
-            "Flask",
-            "PostgreSQL",
-            "SQLite",
-            "Docker",
-            "Railway",
-            "Vercel",
-        ],
-        "responsibilities": [
-            "Delivered backend and full-stack projects sourced through LinkedIn",
-            "Built end-to-end backend services with FastAPI / Flask",
-            "Integrated PostgreSQL / SQLite databases",
-            "Deployed using Docker, Railway, and Vercel",
-            "Managed client communication, requirement scoping, and project delivery timelines independently",
-        ],
-    },
 ]
 
 EDUCATION = [
     {
         "degree": "B.Tech, Computer Science (AI/ML)",
         "institution": "Moradabad Institute of Technology, Moradabad",
-        "duration": "August 2022 – June 2026",
-        "details": "Current: 73%",
+        "duration": "August 2022 - June 2026",
+        "details": "73%",
     },
 ]
 
 CERTIFICATIONS = [
-    "HackerRank — Basic Python",
-    "Java Full Stack — Ducat (2024)",
-    "First Prize — Smart Work Competition",
+    "HackerRank Basic Python",
+    "Java Full Stack, Ducat (2024)",
+    "First Prize, Smart Work Competition",
 ]
 
 COURSEWORK = [

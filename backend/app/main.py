@@ -23,7 +23,7 @@ load_dotenv()
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
-    title="Divyanshi Saini — Portfolio API",
+    title="Divyanshi Saini | Portfolio API",
     description="Backend API powering the Divyanshi Saini portfolio site.",
     version="1.0.0",
 )
@@ -69,7 +69,7 @@ app.include_router(contact.router, prefix=API_PREFIX)
 @app.get("/")
 def root():
     return {
-        "name": "Divyanshi Saini — Portfolio API",
+        "name": "Divyanshi Saini | Portfolio API",
         "docs": "/docs",
         "health": "/api/health",
     }

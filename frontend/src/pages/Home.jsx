@@ -35,21 +35,21 @@ export default function Home({ profile, projectsCount = 4, skillsCount = 40, exp
             </h1>
 
             <h2 className="mt-4 text-lg sm:text-2xl font-semibold text-rose-dark">
-              {profile?.title || 'Backend / Full-Stack Developer'}
+              {profile?.title || 'Full-Stack Software Developer'}
             </h2>
 
             <p className="mt-5 max-w-xl text-base sm:text-lg leading-relaxed text-ink-secondary">
-              I build production-grade REST APIs with Python — FastAPI, Django,
-              and DRF — backed by clean PostgreSQL schemas, async workers, and
-              containerized deployments. Final-year CS (AI/ML) student, freelance
-              backend developer, and intern-turned-shipper.
+              I build reliable web applications with Python and JavaScript,
+              from clear, responsive interfaces to well-designed APIs. I am a
+              Computer Science (AI/ML) graduate with experience in API testing,
+              client delivery, and containerized Python workflows.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <Button to="/projects" icon={FolderGit2}>
                 View Projects
               </Button>
-              <Button href="/resume.pdf" download variant="ghost" icon={Download}>
+              <Button href={profile?.resume_url || '/resume.pdf'} download variant="ghost" icon={Download}>
                 Download Resume
               </Button>
               <Button to="/contact" variant="ghost" icon={Mail}>
@@ -122,7 +122,7 @@ export default function Home({ profile, projectsCount = 4, skillsCount = 40, exp
             {
               icon: Server,
               title: 'Backend-First',
-              text: 'FastAPI, Django, DRF, Flask — request validation, auth, structured error responses, the works.',
+              text: 'FastAPI, Django, DRF, and Flask for request validation, authentication, and clear error handling.',
             },
             {
               icon: Database,
@@ -132,7 +132,7 @@ export default function Home({ profile, projectsCount = 4, skillsCount = 40, exp
             {
               icon: Wrench,
               title: 'Shipped on Day One',
-              text: 'Docker Compose, Railway, Vercel — env-based configs, OpenAPI/Swagger, Gunicorn in prod.',
+              text: 'Docker Compose, Railway, and Vercel with environment-based configuration, API documentation, and Gunicorn.',
             },
           ].map((c, i) => (
             <motion.div

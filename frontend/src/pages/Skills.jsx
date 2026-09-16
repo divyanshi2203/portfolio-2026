@@ -46,7 +46,7 @@ export default function Skills() {
         <SectionTitle
           eyebrow="Skills"
           title="Tools I reach for, every day."
-          subtitle="Backend-first stack — Python, FastAPI, Django, DRF, Postgres, Celery + Redis, Docker — plus the frontend, ML, and infra pieces I use when projects demand them."
+          subtitle="A practical full-stack toolkit for building interfaces, APIs, data workflows, tests, and dependable deployments."
         />
 
         <div className="grid gap-6 md:grid-cols-2">

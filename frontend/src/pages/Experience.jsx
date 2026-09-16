@@ -19,8 +19,8 @@ export default function Experience() {
       <div className="container-page">
         <SectionTitle
           eyebrow="Experience"
-          title="Internship, freelance, shipping."
-          subtitle="A short but focused track — backend internship at ANV Tech Solutions, plus an ongoing freelance practice delivering full backend systems."
+          title="Learning, building, and delivering."
+          subtitle="Experience across API testing and design, full-stack client work, containerized Python tasks, and backend development."
         />
 
         <ExperienceTimeline items={items} />

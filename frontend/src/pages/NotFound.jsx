@@ -22,7 +22,7 @@ export default function NotFound() {
           This page took a wrong turn.
         </h1>
         <p className="mt-3 text-ink-secondary max-w-md mx-auto">
-          The route you're looking for doesn't exist — but the rest of the
+          The route you're looking for doesn't exist, but the rest of the
           portfolio is just one click away.
         </p>
         <div className="mt-7">

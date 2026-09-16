@@ -24,7 +24,7 @@ export default function Contact({ profile }) {
         <SectionTitle
           eyebrow="Get in touch"
           title="Let's connect."
-          subtitle="Got a backend, API, or full-stack project in mind? Or just want to say hi? My inbox is open — and LinkedIn DMs are always welcome."
+          subtitle="Have a software, API, or full-stack project in mind? My inbox is open, and LinkedIn messages are always welcome."
         />
 
         {/* Hero CTA card */}
@@ -44,8 +44,8 @@ export default function Contact({ profile }) {
               I'd love to hear from you.
             </h3>
             <p className="mt-3 text-sm sm:text-base text-ink-secondary leading-relaxed max-w-xl mx-auto">
-              The fastest way to reach me is over email. For anything quick —
-              a hello, a referral, a backend question — LinkedIn works just as
+              The fastest way to reach me is over email. For a quick hello,
+              referral, or development question, LinkedIn works just as
               well. I read everything and reply as soon as I can.
             </p>
 
@@ -71,7 +71,7 @@ export default function Contact({ profile }) {
             </div>
 
             <p className="mt-6 text-xs uppercase tracking-[0.18em] text-rose-dark font-semibold">
-              Looking forward to your emails & messages
+              Looking forward to hearing from you
             </p>
           </div>
         </motion.div>

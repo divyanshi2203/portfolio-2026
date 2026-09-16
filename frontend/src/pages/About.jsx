@@ -25,8 +25,8 @@ export default function About({ profile }) {
       <div className="container-page">
         <SectionTitle
           eyebrow="About me"
-          title="A backend-focused engineer who likes shipping."
-          subtitle="Computer Science (AI/ML) fresher, graduated in June 2026, interested in backend and full-stack development, and someone happiest when an API runs fast and an inference pipeline returns the right answer."
+          title="A full-stack developer who cares about useful, reliable software."
+          subtitle="Computer Science (AI/ML) graduate with experience across API testing, backend development, front-end implementation, and client delivery."
         />
 
         {/* Summary */}
@@ -39,7 +39,7 @@ export default function About({ profile }) {
         >
           <p className="text-base sm:text-lg text-ink-secondary leading-relaxed">
             {profile?.summary ||
-              'Backend-focused CS (AI/ML) fresher, graduated in June 2026, with hands-on experience building production-grade REST APIs and full-stack applications using Python, Django, DRF, Flask, FastAPI, and modern web technologies. Comfortable with JWT auth, PostgreSQL schema design with composite indexing, async task processing using Celery + Redis, and containerized deployment with Docker Compose.'}
+              'Computer Science (AI/ML) graduate with experience building and supporting reliable web applications from interface to API. My work combines Python and JavaScript development with practical testing, thoughtful API design, and dependable deployment.'}
           </p>
         </motion.div>
 
@@ -48,17 +48,17 @@ export default function About({ profile }) {
           <Card
             icon={User2}
             title="Who I Am"
-            text="A backend-focused B.Tech CS (AI/ML) fresher from Moradabad Institute of Technology with a backend and full-stack developer's mindset — schemas first, indexes second, endpoints third."
+            text="A B.Tech Computer Science (AI/ML) graduate who enjoys understanding a problem, building a clear solution, and taking responsibility for the result."
           />
           <Card
             icon={Code2}
             title="What I Build"
-            text="Production-grade REST APIs and full-stack applications with Django, DRF, Flask, and FastAPI — JWT auth, Postgres indexing, Celery + Redis pipelines, Dockerized stacks, OpenAPI docs."
+            text="Full-stack web applications, dependable APIs, and Python workflows using Django, FastAPI, Flask, JavaScript, PostgreSQL, and Docker."
           />
           <Card
             icon={Compass}
             title="What I'm Looking For"
-            text="Backend, full-stack development, and API-focused fresher roles where I can ship clean code, take ownership of schemas and pipelines, and grow into scalable software architecture."
+            text="Software and full-stack development roles where I can contribute across the product, learn from a strong team, and keep growing as an engineer."
           />
         </div>
 
@@ -66,7 +66,7 @@ export default function About({ profile }) {
         <div className="mt-20">
           <SectionTitle
             eyebrow="Education"
-            title="Currently looking for fresher roles in CS (AI/ML), backend, and full-stack development"
+            title="Computer Science foundation with practical product experience"
           />
           <div className="max-w-3xl mx-auto space-y-4">
             {education.map((e, i) => (
@@ -122,10 +122,9 @@ export default function About({ profile }) {
         >
           <h3 className="font-display text-xl font-bold">Career objective</h3>
           <p className="mt-3 text-sm sm:text-base leading-relaxed text-white/90">
-            To contribute to backend and full-stack teams building reliable,
-            scalable services — with a focus on clean API design, well-modeled
-            data, and asynchronous, containerized infrastructure that scales
-            beyond a single machine.
+            To contribute to a thoughtful engineering team, build software that
+            solves real problems, and keep developing the judgment needed to
+            create dependable products from interface to infrastructure.
           </p>
         </motion.div>
       </div>

@@ -34,15 +34,15 @@ export default function Resume({ profile }) {
       <div className="container-page">
         <SectionTitle
           eyebrow="Resume"
-          title="Quick summary — and a downloadable PDF."
-          subtitle="The same content as my full resume, formatted for quick on-page reading. Hit Download for the PDF."
+          title="A concise career overview and downloadable resume."
+          subtitle="Explore the highlights here, or download the one-page PDF for the complete professional summary."
         />
 
         <div className="flex flex-wrap justify-center gap-3 mb-12">
-          <Button href="/resume.pdf" download icon={Download}>
+          <Button href={p.resume_url || '/resume.pdf'} download icon={Download}>
             Download Resume
           </Button>
-          <Button href="/resume.pdf" variant="ghost" icon={ExternalLink}>
+          <Button href={p.resume_url || '/resume.pdf'} variant="ghost" icon={ExternalLink}>
             View Resume
           </Button>
         </div>
@@ -65,7 +65,7 @@ export default function Resume({ profile }) {
             <div className="space-y-5">
               {experience.map((e) => (
                 <div key={e.id} className="border-l-2 border-rose-soft pl-4">
-                  <h4 className="font-semibold text-ink-main">{e.role} — <span className="text-rose-dark">{e.company}</span></h4>
+                  <h4 className="font-semibold text-ink-main">{e.role} <span className="text-rose-dark">at {e.company}</span></h4>
                   <p className="text-xs text-ink-muted mt-0.5">{e.duration}</p>
                   <ul className="mt-2 space-y-1">
                     {e.responsibilities.map((r, i) => (
@@ -86,7 +86,7 @@ export default function Resume({ profile }) {
                 <div key={pr.id} className="border-l-2 border-rose-soft pl-4">
                   <h4 className="font-semibold text-ink-main">{pr.title}</h4>
                   <p className="text-xs text-rose-dark font-medium mt-0.5">
-                    {pr.tech_stack.join(' · ')}
+                    {pr.tech_stack.join(' | ')}
                   </p>
                   <p className="mt-1.5 text-sm text-ink-secondary leading-relaxed">
                     {pr.description}
@@ -101,7 +101,7 @@ export default function Resume({ profile }) {
               <div key={i} className="border-l-2 border-rose-soft pl-4">
                 <h4 className="font-semibold text-ink-main">{e.degree}</h4>
                 <p className="text-sm text-rose-dark">{e.institution}</p>
-                <p className="text-xs text-ink-muted mt-0.5">{e.duration} · {e.details}</p>
+                <p className="text-xs text-ink-muted mt-0.5">{e.duration} | {e.details}</p>
               </div>
             ))}
           </Block>
@@ -109,12 +109,14 @@ export default function Resume({ profile }) {
           <Block icon={Award} title="Technical Skills">
             <div className="space-y-2 text-sm text-ink-secondary">
               <p><strong className="text-ink-main">Languages:</strong> {skills.programming?.join(', ')}</p>
+              <p><strong className="text-ink-main">Front End:</strong> {skills.frontend?.join(', ')}</p>
               <p><strong className="text-ink-main">Backend:</strong> {skills.backend?.join(', ')}</p>
               <p><strong className="text-ink-main">Databases & ORMs:</strong> {skills.databases?.join(', ')}</p>
               <p><strong className="text-ink-main">APIs & Auth:</strong> {skills.apis_auth?.join(', ')}</p>
               <p><strong className="text-ink-main">Async & Infra:</strong> {skills.async_infra?.join(', ')}</p>
               <p><strong className="text-ink-main">DevOps:</strong> {skills.devops?.join(', ')}</p>
               <p><strong className="text-ink-main">ML / Data:</strong> {skills.ml_data?.join(', ')}</p>
+              <p><strong className="text-ink-main">Tools & Testing:</strong> {skills.tools?.join(', ')}</p>
             </div>
           </Block>
 

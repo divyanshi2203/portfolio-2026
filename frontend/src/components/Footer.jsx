@@ -14,8 +14,8 @@ export default function Footer({ profile }) {
             {p.name}<span className="text-rose-primary">.</span>
           </h3>
           <p className="mt-3 text-sm leading-relaxed text-ink-secondary max-w-sm">
-            Backend & full-stack developer building production-grade REST APIs
-            in Python, FastAPI, and Django.
+            Full-stack software developer building reliable web applications
+            with Python, JavaScript, and modern API frameworks.
           </p>
         </div>
 
@@ -72,7 +72,7 @@ export default function Footer({ profile }) {
             {p.location || 'India'}
           </p>
           <p className="mt-4 text-xs text-ink-muted">
-            Available for backend, API, and full-stack engagements.
+            Available for software and full-stack development opportunities.
           </p>
         </div>
       </div>

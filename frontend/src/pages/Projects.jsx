@@ -22,7 +22,7 @@ export default function Projects() {
         <SectionTitle
           eyebrow="Projects"
           title="A few things I have shipped."
-          subtitle="From a CNN-backed healthcare API to a containerized Django indexer — each project here is built to ship, not just to demo."
+          subtitle="From a CNN-backed healthcare platform to a containerized Django indexer, each project is built to solve a real problem."
         />
 
         {loading ? (

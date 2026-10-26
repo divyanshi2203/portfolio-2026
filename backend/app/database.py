@@ -1,7 +1,7 @@
 """Database configuration using SQLAlchemy.
 
 Supports SQLite (local dev) and PostgreSQL (e.g. Railway). Railway's
-DATABASE_URL starts with `postgres://`, which SQLAlchemy 2.x rejects —
+DATABASE_URL starts with `postgres://`, which SQLAlchemy 2.x rejects -
 so we normalize it to `postgresql://` here.
 """
 import os

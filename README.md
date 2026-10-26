@@ -1,222 +1,113 @@
-# Divyanshi Saini — Portfolio
+# Divyanshi Saini, Portfolio
 
-A modern, full-stack personal portfolio for **Divyanshi Saini** — a backend-focused
-Python / FastAPI / Django developer — built with **React + Vite + Tailwind**
-on the frontend and **FastAPI + SQLAlchemy + SQLite** on the backend.
+A personal portfolio for **Divyanshi Saini**, a Python backend and software
+developer. Built with **React + Vite + Tailwind CSS** and animated with
+**Framer Motion**.
 
-The design uses a soft rose / red palette built specifically for a serious,
-professional developer brand.
+The site serves all content from a single frontend data file, so it is fast,
+fully static, and has no runtime API dependency.
+
+> Content rule: this project never uses the long dash character. Use commas,
+> periods, colons, parentheses, or the normal hyphen "-" instead.
+
+---
+
+## Positioning
+
+Python Backend and Software Developer. Backend work (Django, Flask, FastAPI,
+PostgreSQL, Docker) leads; frontend and full-stack delivery support it.
 
 ---
 
 ## Tech stack
 
-**Frontend**
+**Frontend (live site)**
 
 - React 18 (Vite)
 - Tailwind CSS
 - React Router DOM
-- Axios
 - Framer Motion
 - Lucide React (icons)
 
-**Backend**
+**Backend (kept in the repo, not used by the live site)**
 
-- FastAPI
-- Pydantic v2
-- SQLAlchemy 2
-- SQLite (via SQLAlchemy)
-- Uvicorn
-- CORS middleware
+The `backend/` folder holds a FastAPI + SQLAlchemy service from an earlier
+version. It is retained as a reference project but is no longer deployed or
+called by the frontend. All portfolio content now lives in the frontend.
 
 ---
 
-## Features
+## Content: one source of truth
 
-- Rose / red premium UI with gradients, soft shadows, and animated transitions
-- Sticky transparent navbar that becomes solid on scroll
-- Animated page transitions via Framer Motion
-- Hero with stats, decorative blobs, and CTAs (View Projects, Download Resume, Contact Me)
-- Skills grouped by category, each with hoverable badges
-- Project cards with modal detail (problem, role, features, GitHub, live demo)
-- Vertical experience timeline
-- Resume preview page with download/view buttons
-- Contact form with validation, loading state, and success/error toasts
-- SQLite storage of contact messages
-- Fallback data so the frontend keeps working if the backend isn't running
-
----
-
-## Folder structure
+All portfolio content lives in:
 
 ```
-myportfolio/
-├── backend/
-│   ├── app/
-│   │   ├── main.py
-│   │   ├── database.py
-│   │   ├── models.py
-│   │   ├── schemas.py
-│   │   ├── routes/
-│   │   │   ├── health.py
-│   │   │   ├── profile.py
-│   │   │   ├── skills.py
-│   │   │   ├── projects.py
-│   │   │   ├── experience.py
-│   │   │   ├── education.py
-│   │   │   └── contact.py
-│   │   └── data/
-│   │       └── portfolio_data.py
-│   ├── requirements.txt
-│   ├── .env.example
-│   └── README.md
-├── frontend/
-│   ├── src/
-│   │   ├── api/axios.js
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── data/fallbackData.js
-│   │   ├── App.jsx
-│   │   ├── main.jsx
-│   │   └── index.css
-│   ├── public/
-│   │   ├── resume.pdf
-│   │   └── favicon.svg
-│   ├── index.html
-│   ├── package.json
-│   ├── vite.config.js
-│   ├── tailwind.config.js
-│   ├── postcss.config.js
-│   ├── .env.example
-│   └── README.md
-└── README.md
+frontend/src/data/portfolioData.js
+```
+
+Profile, experience, projects, skills, education, and SEO defaults are defined
+there. Edit that one file to update the site. There is no duplicate copy and no
+API to keep in sync.
+
+---
+
+## Structure
+
+```
+portfolio-2026/
+|- frontend/
+|  |- src/
+|  |  |- data/portfolioData.js     one source of truth
+|  |  |- components/
+|  |  |  |- layout/  (Navbar, Footer, PageContainer)
+|  |  |  |- home/    (Hero, CredibilityStrip, CapabilityGrid, CTAs, ...)
+|  |  |  |- projects/(ProjectCard, ProjectCaseStudy, ArchitectureDiagram)
+|  |  |  |- experience/(ExperienceTimeline)
+|  |  |  |- shared/  (Button, SectionHeading, TechTag, Seo, ExternalLink)
+|  |  |- pages/      (Home, Work, ProjectDetail, Experience, About, Resume, Contact, NotFound)
+|  |  |- App.jsx, main.jsx, index.css
+|  |- public/        (profile.jpeg, resume.pdf, resume-preview.webp, projects/, robots.txt, sitemap.xml)
+|  |- index.html, tailwind.config.js, vite.config.js
+|- backend/          (legacy FastAPI service, not used by the live site)
+|- scripts/build_resume.py
 ```
 
 ---
 
 ## Setup
 
-### Backend
-
-```bash
-cd backend
-python -m venv venv
-source venv/bin/activate          # Windows: venv\Scripts\activate
-pip install -r requirements.txt
-cp .env.example .env
-uvicorn app.main:app --reload
-```
-
-Backend at `http://localhost:8000`. Interactive docs at `http://localhost:8000/docs`.
-
-### Frontend
-
 ```bash
 cd frontend
 npm install
-cp .env.example .env
 npm run dev
 ```
 
 Frontend at `http://localhost:5173`.
 
----
+Production build:
 
-## Environment variables
-
-**Backend (`backend/.env`)**
-
-```
-DATABASE_URL=sqlite:///./portfolio.db
-FRONTEND_URL=http://localhost:5173
-```
-
-**Frontend (`frontend/.env`)**
-
-```
-VITE_API_BASE_URL=http://localhost:8000/api
+```bash
+npm run build
 ```
 
 ---
 
-## API routes
+## Routes
 
-| Method | Path                          | Description                          |
-| ------ | ----------------------------- | ------------------------------------ |
-| GET    | `/api/health`                 | Health check                         |
-| GET    | `/api/profile`                | Profile data (hero / footer / about) |
-| GET    | `/api/skills`                 | Grouped technical skills             |
-| GET    | `/api/projects`               | All projects                         |
-| GET    | `/api/projects/{id}`          | Project detail                       |
-| GET    | `/api/experience`             | Experience / internships             |
-| GET    | `/api/education`              | Education history                    |
-| GET    | `/api/certifications`         | Certifications + coursework          |
-| POST   | `/api/contact`                | Submit contact form                  |
-| GET    | `/api/contact-messages`       | List submitted messages (dev only)   |
-
-CORS is enabled for `http://localhost:5173` and `http://localhost:3000`.
-
----
-
-## Frontend routes
-
-| Path           | Page         |
-| -------------- | ------------ |
-| `/`            | Home / hero  |
-| `/about`       | About + education + certifications |
-| `/skills`      | Grouped skills |
-| `/projects`    | Project grid + modal details |
-| `/experience`  | Experience timeline |
-| `/resume`      | Resume preview + download |
-| `/contact`     | Contact form + direct contact info |
-| `*`            | 404           |
-
----
-
-## Color palette
-
-| Token                  | Hex          |
-| ---------------------- | ------------ |
-| Rose Primary           | `#E11D48`    |
-| Rose Dark              | `#BE123C`    |
-| Soft Pink              | `#FFE4E6`    |
-| Light Rose             | `#FFF1F2`    |
-| Deep Red Accent        | `#991B1B`    |
-| Main Background        | `#FFF7F8`    |
-| Section Background     | `#FFF1F2`    |
-| Card Background        | `#FFFFFF`    |
-| Main Text              | `#1F2937`    |
-| Secondary Text         | `#4B5563`    |
-| Muted Text             | `#6B7280`    |
-| Border                 | `#FBCFE8`    |
-
----
-
-## Customization
-
-- **Resume content** — edit `backend/app/data/portfolio_data.py` and the matching `frontend/src/data/fallbackData.js` to keep both in sync.
-- **Resume PDF** — replace `frontend/public/resume.pdf` with your updated file.
-- **Profile image** — drop a `profile-placeholder.png` in `frontend/public/` and swap the initial-avatar in `Home.jsx` for an `<img>` tag.
-- **Theme** — tweak `frontend/tailwind.config.js` (colors + gradients) and `frontend/src/index.css`.
-
----
-
-## Screenshots
-
-> _(Placeholder — add screenshots of the Home, Projects, and Contact pages here once running.)_
+| Path                        | Page                                   |
+| --------------------------- | -------------------------------------- |
+| `/`                         | Home                                   |
+| `/work`                     | Selected work (project grid)           |
+| `/projects/:slug`           | Project case study                     |
+| `/experience`               | Experience timeline                    |
+| `/about`                    | About, education, capabilities         |
+| `/resume`                   | Resume preview and download            |
+| `/contact`                  | Direct contact (email, LinkedIn)       |
+| `*`                         | 404                                    |
 
 ---
 
 ## Deployment
 
-See **[DEPLOY.md](./DEPLOY.md)** for a full step-by-step guide covering:
-
-- Pushing the repo to GitHub
-- Deploying the backend to **Railway** (with auto-provisioned PostgreSQL)
-- Deploying the frontend to **Vercel** (with SPA routing configured)
-- Wiring up a custom domain from Hostinger / Porkbun / Namecheap / Cloudflare
-- Common gotchas and an after-deploy checklist
-
-Quick links:
-- `backend/Procfile`, `backend/railway.json`, `backend/nixpacks.toml` — Railway is already configured
-- `frontend/vercel.json` — Vercel is already configured with the right SPA rewrites
+Deployed on Vercel. `frontend/vercel.json` is configured with the SPA rewrite so
+client-side routes resolve correctly.

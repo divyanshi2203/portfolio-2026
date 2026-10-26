@@ -28,7 +28,7 @@ app = FastAPI(
     version="1.0.0",
 )
 
-# CORS — comma-separated list of additional origins via ALLOWED_ORIGINS env var.
+# CORS - comma-separated list of additional origins via ALLOWED_ORIGINS env var.
 # Example: ALLOWED_ORIGINS="https://divyanshi.vercel.app,https://divyanshi.dev"
 default_origins = [
     "http://localhost:5173",
@@ -55,7 +55,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Routers — all mounted under /api
+# Routers - all mounted under /api
 API_PREFIX = "/api"
 app.include_router(health.router, prefix=API_PREFIX)
 app.include_router(profile.router, prefix=API_PREFIX)

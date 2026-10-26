@@ -5,30 +5,28 @@ export default {
     extend: {
       colors: {
         rose: {
+          DEFAULT: '#E11D48',
           primary: '#E11D48',
-          dark: '#BE123C',
-          soft: '#FFE4E6',
-          light: '#FFF1F2',
-          deep: '#991B1B',
+          deep: '#BE123C',
+          wine: '#881337',
         },
-        bg: {
-          main: '#FFF7F8',
-          section: '#FFF1F2',
+        surface: {
+          page: '#FFF8F9',
+          soft: '#FFF1F2',
           card: '#FFFFFF',
         },
         ink: {
-          main: '#1F2937',
-          secondary: '#4B5563',
-          muted: '#6B7280',
+          main: '#191B23',
+          secondary: '#505766',
+          muted: '#737B8C',
         },
-        border: {
-          rose: '#FBCFE8',
+        line: {
+          soft: '#FBCFD8',
         },
       },
       fontFamily: {
         sans: [
           'Inter',
-          'Poppins',
           'ui-sans-serif',
           'system-ui',
           '-apple-system',
@@ -39,20 +37,24 @@ export default {
         display: ['Poppins', 'Inter', 'sans-serif'],
       },
       boxShadow: {
-        soft: '0 10px 30px -10px rgba(225, 29, 72, 0.15)',
-        card: '0 12px 32px -12px rgba(190, 18, 60, 0.12)',
-        glow: '0 0 0 1px rgba(225, 29, 72, 0.15), 0 20px 40px -16px rgba(190, 18, 60, 0.25)',
+        // Restrained shadows, fewer glows.
+        soft: '0 1px 2px rgba(25, 27, 35, 0.04), 0 8px 22px -16px rgba(136, 19, 55, 0.20)',
+        card: '0 1px 3px rgba(25, 27, 35, 0.05), 0 14px 30px -20px rgba(136, 19, 55, 0.18)',
+        lift: '0 2px 6px rgba(25, 27, 35, 0.06), 0 20px 36px -22px rgba(136, 19, 55, 0.26)',
       },
       backgroundImage: {
+        // Subtle gradients only, reserved for hero and major CTAs.
         'hero-gradient':
-          'linear-gradient(135deg, #FFF1F2 0%, #FFE4E6 45%, #FFFFFF 100%)',
-        'btn-gradient':
-          'linear-gradient(135deg, #E11D48 0%, #BE123C 100%)',
-        'card-hover':
-          'linear-gradient(135deg, #FFFFFF 0%, #FFF1F2 100%)',
+          'linear-gradient(160deg, #FFF8F9 0%, #FFF1F2 55%, #FFFFFF 100%)',
+        'btn-gradient': 'linear-gradient(135deg, #E11D48 0%, #BE123C 100%)',
+        'wine-gradient': 'linear-gradient(135deg, #BE123C 0%, #881337 100%)',
       },
       borderRadius: {
-        '2xl': '1.25rem',
+        xl: '0.875rem',
+        '2xl': '1.125rem',
+      },
+      maxWidth: {
+        content: '72rem',
       },
     },
   },

@@ -1,36 +1,26 @@
-# Portfolio Frontend — React + Vite + Tailwind
+# Portfolio Frontend
+
+React + Vite + Tailwind CSS frontend for the Divyanshi Saini portfolio.
+
+All content is served from `src/data/portfolioData.js`. There is no API
+dependency.
+
+> Content rule: never use the long dash character. Use commas, periods, colons,
+> parentheses, or the normal hyphen "-" instead.
 
 ## Setup
 
 ```bash
-cd frontend
 npm install
-cp .env.example .env
 npm run dev
 ```
 
-Dev server runs at `http://localhost:5173`.
+Frontend at `http://localhost:5173`.
 
-## Environment
+## Build
 
+```bash
+npm run build
 ```
-VITE_API_BASE_URL=http://localhost:8000/api
-```
 
-## Routes
-
-| Path           | Page         |
-| -------------- | ------------ |
-| `/`            | Home / hero  |
-| `/about`       | About        |
-| `/skills`      | Skills       |
-| `/projects`    | Projects     |
-| `/experience`  | Experience   |
-| `/resume`      | Resume       |
-| `/contact`     | Contact      |
-| `*`            | 404          |
-
-## Replacing the resume
-
-Drop your updated PDF at `public/resume.pdf` — the Download button uses
-the path directly.
+Output goes to `dist/`.

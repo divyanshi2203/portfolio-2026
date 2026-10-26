@@ -1,4 +1,4 @@
-# Portfolio Backend — FastAPI
+# Portfolio Backend - FastAPI
 
 REST API powering the Divyanshi Saini portfolio site.
 

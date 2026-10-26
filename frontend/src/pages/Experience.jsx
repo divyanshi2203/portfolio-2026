@@ -1,30 +1,27 @@
-import React, { useEffect, useState } from 'react'
-import api from '../api/axios'
-import { EXPERIENCE as FALLBACK } from '../data/fallbackData'
-import SectionTitle from '../components/SectionTitle'
-import ExperienceTimeline from '../components/ExperienceTimeline'
+import React from 'react'
+import PageContainer from '../components/layout/PageContainer'
+import Seo from '../components/shared/Seo'
+import SectionHeading from '../components/shared/SectionHeading'
+import ExperienceTimeline from '../components/experience/ExperienceTimeline'
+import { EXPERIENCE } from '../data/portfolioData'
 
 export default function Experience() {
-  const [items, setItems] = useState(FALLBACK)
-
-  useEffect(() => {
-    api
-      .get('/experience')
-      .then((r) => setItems(r.data?.length ? r.data : FALLBACK))
-      .catch(() => setItems(FALLBACK))
-  }, [])
-
   return (
-    <main className="pt-28 pb-24 bg-bg-section/40">
-      <div className="container-page">
-        <SectionTitle
+    <PageContainer>
+      <Seo
+        title="Experience"
+        path="/experience"
+        description="Divyanshi Saini's experience: Python developer intern at SaaSBanana Technologies, AI coding benchmark contribution at Handshake AI and Outlier AI, freelance full-stack delivery, and a backend internship at ANV Tech Solutions."
+      />
+      <div className="container-page max-w-3xl">
+        <SectionHeading
+          align="left"
           eyebrow="Experience"
-          title="Learning, building, and delivering."
-          subtitle="Experience across API testing and design, full-stack client work, containerized Python tasks, and backend development."
+          title="Building, testing, and shipping."
+          subtitle="Backend development and API testing today, with AI coding benchmark work and full-stack delivery alongside it."
         />
-
-        <ExperienceTimeline items={items} />
+        <ExperienceTimeline items={EXPERIENCE} />
       </div>
-    </main>
+    </PageContainer>
   )
 }

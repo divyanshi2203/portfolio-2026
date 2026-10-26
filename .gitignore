@@ -25,7 +25,7 @@ venv/
 env/
 ENV/
 
-# SQLite (local dev DB) — never commit local data
+# SQLite (local dev DB) - never commit local data
 *.db
 *.sqlite
 *.sqlite3

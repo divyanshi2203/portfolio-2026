@@ -8,10 +8,9 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Inter', 'Poppins', system-ui, -apple-system, Segoe UI, Roboto,
-    sans-serif;
-  background-color: #fff7f8;
-  color: #1f2937;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  background-color: #fff8f9;
+  color: #191b23;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -24,64 +23,86 @@ h4 {
   letter-spacing: -0.02em;
 }
 
+/* Skip link for keyboard users */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  background: #ffffff;
+  color: #be123c;
+  padding: 0.6rem 1rem;
+  border-radius: 0.6rem;
+  box-shadow: 0 10px 24px -14px rgba(136, 19, 55, 0.4);
+  font-weight: 600;
+}
+
 /* ---------- Reusable component classes ---------- */
 @layer components {
   .container-page {
-    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
-  }
-
-  .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-full
-           bg-btn-gradient px-6 py-3 text-sm font-semibold text-white shadow-soft
-           transition-all duration-300 hover:shadow-glow hover:-translate-y-0.5
-           focus:outline-none focus:ring-2 focus:ring-rose-primary/40;
-  }
-
-  .btn-ghost {
-    @apply inline-flex items-center justify-center gap-2 rounded-full
-           border border-rose-soft bg-white px-6 py-3 text-sm font-semibold
-           text-rose-dark shadow-soft transition-all duration-300
-           hover:bg-rose-light hover:-translate-y-0.5
-           focus:outline-none focus:ring-2 focus:ring-rose-primary/30;
-  }
-
-  .card-base {
-    @apply rounded-2xl border border-rose-100 bg-white p-6 shadow-card
-           transition-all duration-300;
-  }
-
-  .card-hover {
-    @apply hover:-translate-y-1 hover:shadow-glow hover:bg-card-hover;
-  }
-
-  .badge-rose {
-    @apply inline-flex items-center rounded-full border border-rose-100
-           bg-rose-light px-3 py-1 text-xs font-medium text-rose-dark;
-  }
-
-  .input-base {
-    @apply w-full rounded-xl border border-rose-100 bg-white px-4 py-3 text-sm
-           text-ink-main placeholder:text-ink-muted shadow-sm
-           focus:border-rose-primary focus:outline-none focus:ring-2
-           focus:ring-rose-primary/20 transition-all;
+    @apply mx-auto w-full max-w-content px-5 sm:px-8;
   }
 
   .section-padding {
     @apply py-16 sm:py-24;
   }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full
+           bg-btn-gradient px-5 py-3 text-sm font-semibold text-white shadow-soft
+           transition duration-200 hover:-translate-y-0.5 hover:shadow-lift
+           focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-wine/50
+           focus-visible:ring-offset-2 focus-visible:ring-offset-surface-page;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full
+           border border-line-soft bg-white px-5 py-3 text-sm font-semibold
+           text-rose-deep shadow-soft transition duration-200
+           hover:-translate-y-0.5 hover:bg-surface-soft
+           focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-wine/40
+           focus-visible:ring-offset-2 focus-visible:ring-offset-surface-page;
+  }
+
+  .card-base {
+    @apply rounded-2xl border border-line-soft bg-white p-6 shadow-card
+           transition duration-200;
+  }
+
+  .card-hover {
+    @apply hover:-translate-y-0.5 hover:shadow-lift hover:border-rose-primary/30;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-line-soft
+           bg-surface-soft px-3 py-1 text-xs font-semibold uppercase
+           tracking-wider text-rose-wine;
+  }
+
+  .tech-tag {
+    @apply inline-flex items-center rounded-md border border-line-soft
+           bg-surface-soft px-2.5 py-1 text-xs font-medium text-rose-deep;
+  }
+
+  .status-dot {
+    @apply inline-block h-2 w-2 rounded-full bg-rose-primary;
+  }
 }
 
-/* ---------- Floating decorative blobs ---------- */
-.blob {
-  position: absolute;
-  border-radius: 9999px;
-  filter: blur(60px);
-  opacity: 0.55;
-  z-index: 0;
-  pointer-events: none;
+/* ---------- Focus visibility (accessibility) ---------- */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid #be123c;
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
-/* ---------- Scrollbar styling ---------- */
+/* ---------- Scrollbar ---------- */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -89,6 +110,21 @@ h4 {
   background: #fff1f2;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #e11d48, #be123c);
+  background: linear-gradient(180deg, #e11d48, #881337);
   border-radius: 999px;
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
